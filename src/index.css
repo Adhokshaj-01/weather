@@ -1,13 +1,205 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+*{
+  font-family: 'Poppins', sans-serif;
+  font-weight: bold;
+  color: white;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Poppins', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+   text-align: center;
+  }
+
+.main{
+  position:absolute;
+  width: 100%;
+  height: 100vh;
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+  
+}
+.weather {
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;
+  top: 50%;
+   width:80%;
+   /*border: 1px solid cyan;*/
+   height:90vh;
+}
+.input {
+  position: relative;
+  outline: none;
+  margin-bottom: 5px;
+ /* border: 1px solid red;*/
+}
+/*--to remove cross 'X' sign--*/
+input[type=text]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=text]::-ms-reveal {  display: none; width : 0; height: 0; }
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
+.input> .input-box{
+  border: none;
+  outline: none;
+  text-align: center;
+  height: 40px;
+  width: 35%;
+  font-size: 22px;
+  border-radius: 10px;
+  color: black !important;
+}
+.info{
+  display: flex;
+  height: 40vh;
+ 
+}
+.location-info{
+  flex: 50%;
+  height: inherit;
+  background-color: rgba(13, 28, 39, 0.3);
+  border-radius: 20px;
+  transition: ease-in 0.5s;
+}
+.location-details{
+   margin-top:50px;
+}
+.weather-info{
+  flex: 50%;
+  height: inherit;
+  background-color: rgba(13, 28, 39, 0.3);
+  border-radius: 20px;
+  margin-left: 5px; 
+  transition: ease-in 0.5s;
+}
+.next-days{
+  display: flex;
+ margin-top: 5px;
+  width: 100%;
+  height: 40vh;
+  background-color: rgba(13, 28, 39, 0.3);
+  border-radius: 20px;
+  transition: ease-in 0.5s;
+}
+.humidity{
+  flex: 50%;
+  border-right: 1px solid rgb(114, 114, 114);
+}
+.wind{
+  flex: 50%;
+}
+.span{
+  font-size: 70px;
+  justify-content:  center;
+  position: relative;
+  top: 7%;
+}
+.span1{
+  font-size: 70px;
+  justify-self: center;
+  position: relative;
+  top: 7%;
+}
+.btn{
+position: relative;
+left: 1%;
+top: 3px;
+height: 43px;
+width: 40px;
+border-radius: 10px;
+background-color: rgb(106, 171, 245);
+border: none;
+outline: none;
+cursor: pointer;
+
+}
+/*-----loader--css-------------------------------------------------------------------------*/
+@keyframes pulse {
+  50% {
+    background: #fff;
+ }
+}
+.loading-pulse {
+  position: relative;
+  width: 6px;
+  height: 24px;
+  left: 50%;
+  top: 100px;
+  background: rgba(255, 255, 255, 0.2);
+  animation: pulse 750ms infinite;
+  animation-delay: 250ms;
+}
+.loading-pulse:before, .loading-pulse:after {
+  content: '';
+  position: absolute;
+  display: block;
+  height: 16px;
+  width: 6px;
+  background: rgba(255, 255, 255, 0.2);
+  top: 50%;
+  transform: translateY(-50%);
+  animation: pulse 750ms infinite;
+}
+.loading-pulse:before {
+  left: -12px;
+}
+.loading-pulse:after {
+  left: 12px;
+  animation-delay: 500ms;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+/*---css--loader-end--------------------------------------------------------------------------*/
+
+@keyframes animate {
+  0%{
+    position: relative;
+    top: -5px;
+  }
+  50%{
+    position: relative;
+  }
+  100%{
+    position: relative;
+    top:10px;
+  }
+}
+.other{
+
+  color: whitesmoke;
+}
+.footer{position: relative;
+       top: 90%;}
+ a{
+   text-decoration: none;
+   border-bottom: white;
+ }      
+
+@media screen  and (max-width:870px){
+  .input> .input-box{
+    width:85%;
+  }
+  .location-info{
+    font-size: 15px;
+  }
+  
+}
+
+.pre-loader{
+  position: absolute;
+  z-index: 9999;
+  height: 100vh;
+  width: 100%;
+  display: block;
+  background-color: #7f5a83;
+  background-image: linear-gradient(315deg, #7f5a83 0%, #0d324d 74%);
+  
+}
+#pre-loader{
+  position: absolute;
+  transform: translate(-50%,-50%);
+  left: 50%;top: 50%;
 }
